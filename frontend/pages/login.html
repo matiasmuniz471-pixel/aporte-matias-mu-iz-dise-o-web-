@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | Seminario Tech</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section class="formulario-section login-page">
+        <div class="formulario-box">
+            <h2>Iniciar Sesión</h2>
+
+            <input type="email" id="loginCorreo" placeholder="Correo electrónico" autocomplete="email">
+            <input type="password" id="loginPassword" placeholder="Contraseña" autocomplete="current-password">
+
+            <button class="btn-registro" type="button" onclick="iniciarSesion()">
+                Entrar a Seminario Tech
+            </button>
+
+            <div id="mensajeLogin"></div>
+            <p class="auth-helper">¿Aún no tienes cuenta? <a href="index.html#registro">Crear cuenta</a></p>
+        </div>
+    </section>
+
+    <script src="/assets/js/api.js"></script>
+    <script src="/assets/js/login.js"></script>
+
+</body>
+</html>

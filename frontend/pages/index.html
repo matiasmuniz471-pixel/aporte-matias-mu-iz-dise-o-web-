@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminario Tech</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="menu" id="menuPrincipal">
+    <div class="logo">SEMINARIO TECH</div>
+
+    <button class="menu-toggle" type="button" onclick="toggleMenu()" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav id="menuNavegacion">
+        <ul>
+            <li><a href="#inicio" onclick="cerrarMenu()">Inicio</a></li>
+            <li><a href="#nosotros" onclick="cerrarMenu()">Nosotros</a></li>
+            <li><a href="#planes" onclick="cerrarMenu()">Planes</a></li>
+            <li><a href="#registro" onclick="cerrarMenu()">Registro</a></li>
+        </ul>
+    </nav>
+
+    <button class="btn-login" type="button" onclick="irLogin()">
+        Iniciar Sesi&oacute;n
+    </button>
+</header>
+
+<section class="hero" id="inicio">
+    <span class="evento">EVENTOS &bull; TECNOLOG&Iacute;A &bull; NETWORKING</span>
+
+    <h1>Crea seminarios <span>profesionales</span></h1>
+
+    <p>
+        Plataforma moderna para administrar eventos, talleres y conferencias tecnol&oacute;gicas
+        con experiencia fluida para organizadores y participantes.
+    </p>
+
+    <button class="btn-principal" type="button" onclick="irRegistro()">
+        Comenzar Ahora
+    </button>
+</section>
+
+<section class="intro-tech" id="nosotros">
+    <div class="intro-container">
+        <div class="intro-text">
+            <span class="intro-tag">SOBRE NOSOTROS</span>
+
+            <h2>Transformamos eventos en experiencias profesionales</h2>
+
+            <p>
+                Seminario Tech es una plataforma innovadora dise&ntilde;ada para la creaci&oacute;n,
+                administraci&oacute;n y participaci&oacute;n en seminarios tecnol&oacute;gicos, talleres y
+                conferencias profesionales.
+            </p>
+
+            <p>
+                Nuestro objetivo es conectar participantes, empresas y organizadores
+                en un solo ecosistema digital moderno, ofreciendo herramientas avanzadas,
+                networking profesional y experiencias de alto nivel.
+            </p>
+
+            <div class="intro-buttons">
+                <button class="intro-btn" type="button" onclick="irRegistro()">Explorar Eventos</button>
+                <button class="intro-btn-secundario" type="button" onclick="irRegistro()">Conocer M&aacute;s</button>
+            </div>
+        </div>
+
+        <div class="intro-image">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200" alt="Equipo profesional en un seminario">
+        </div>
+    </div>
+</section>
+
+<section class="tipos" id="planes">
+    <h2>Elige tu experiencia</h2>
+
+    <div class="cards-tipos">
+        <div class="tipo-card">
+            <span class="tipo-label cliente-label">PARA PARTICIPANTES</span>
+
+            <h3>Experience Pass</h3>
+
+            <p>
+                Vive experiencias tecnol&oacute;gicas exclusivas y conecta con profesionales del sector digital.
+            </p>
+
+            <ul>
+                <li>Acceso prioritario a eventos premium</li>
+                <li>Certificados digitales verificables</li>
+                <li>Workshops y talleres especializados</li>
+                <li>Networking con expertos tecnol&oacute;gicos</li>
+                <li>Recursos y material descargable</li>
+                <li>Invitaciones a eventos privados</li>
+            </ul>
+
+            <button class="btn-card" type="button" onclick="seleccionarTipo('cliente')">
+                Unirme como Participante
+            </button>
+        </div>
+
+        <div class="tipo-card empresa">
+            <span class="tipo-label empresa-label">PARA EMPRESAS</span>
+
+            <h3>Business Creator</h3>
+
+            <p>
+                Organiza eventos profesionales y administra asistentes desde un panel empresarial avanzado.
+            </p>
+
+            <ul>
+                <li>Crear seminarios ilimitados</li>
+                <li>Panel administrativo premium</li>
+                <li>Gesti&oacute;n completa de asistentes</li>
+                <li>Estad&iacute;sticas y m&eacute;tricas avanzadas</li>
+                <li>Mayor visibilidad para tu marca</li>
+                <li>Promoci&oacute;n destacada de eventos</li>
+            </ul>
+
+            <button class="btn-card" type="button" onclick="seleccionarTipo('empresa')">
+                Crear Eventos Empresariales
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="formulario-section" id="registro">
+    <div class="formulario-box">
+        <h2>Crear Cuenta Profesional</h2>
+
+        <input type="text" id="nombre" placeholder="Nombre completo" autocomplete="name">
+        <input type="email" id="correo" placeholder="Correo electr&oacute;nico" autocomplete="email">
+
+        <select id="tipo">
+            <option value="">Selecciona tu tipo de cuenta</option>
+            <option value="cliente">Experience Pass</option>
+            <option value="empresa">Business Creator</option>
+        </select>
+
+        <div class="empresa-fields" id="empresaFields" hidden>
+            <div class="form-divider">Datos de empresa</div>
+            <input type="text" id="razonSocial" placeholder="Raz&oacute;n social">
+            <input type="text" id="identificacionFiscal" placeholder="RUC o ID fiscal">
+            <input type="text" id="sector" placeholder="Sector o industria">
+            <input type="tel" id="telefonoEmpresa" placeholder="Tel&eacute;fono de contacto">
+            <input type="url" id="sitioWeb" placeholder="Sitio web o perfil digital">
+            <input type="text" id="representante" placeholder="Representante o contacto principal">
+            <input type="text" id="cargoRepresentante" placeholder="Cargo del representante">
+        </div>
+
+        <input type="password" id="password" placeholder="Contrase&ntilde;a" autocomplete="new-password">
+
+        <button class="btn-registro" type="button" onclick="registrar()">
+            Crear Cuenta
+        </button>
+
+        <div id="mensaje"></div>
+    </div>
+</section>
+
+<footer>
+    <h3>SEMINARIO TECH 2026</h3>
+    <p>Innovaci&oacute;n &bull; Tecnolog&iacute;a &bull; Eventos Profesionales</p>
+</footer>
+
+<script src="/assets/js/api.js"></script>
+<script src="/assets/js/script.js"></script>
+
+</body>
+</html>
